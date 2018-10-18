@@ -7,6 +7,7 @@ var AutomateSchema = new mongoose.Schema({
     lieu: String,
     bassin: String,
     numeroserie: Number,
+    configuration: JSON
   });
 
   module.exports = mongoose.model('Automate', AutomateSchema);

@@ -17,6 +17,7 @@
           <th>Marque</th>
           <th>Modèle</th>
           <th>Numéro de série</th>
+          <th> Configuration </th>
           <th>Secteur</th>
           <th>Code Postale</th>
           <th>Bassin</th>
@@ -39,6 +40,10 @@
             <%= automates[i].numeroserie%>
           </td>
           <td>
+              <%= automates[i].configuration%>
+            </td>
+  
+          <td>
               <%= automates[i].secteur%>
           </td>
           <td>
@@ -47,10 +52,11 @@
           <td>
             <%= automates[i].bassin%>
           </td>
+    
 
           <td><a href="#editModal" data-target="#editModal" data-toggle="modal" data-id="<%=automates[i]._id%>"
-              data-marque="<%=automates[i].marque%>" data-modele="<%=automates[i].modele%>" data-secteur="<%=automates[i].secteur%>"
-              data-bassin="<%=automates[i].bassin%>" data-numeroserie="<%=automates[i].numeroserie%>"><i class="fas fa-edit fa-2x"></i></a></td>
+              data-marque="<%=automates[i].marque%>" data-modele="<%=automates[i].modele%>" data-secteur="<%=automates[i].secteur%>" data-lieu="<%=automates.lieu%>"
+              data-bassin="<%=automates[i].bassin%>" data-numeroserie="<%=automates[i].numeroserie%>" data-configuration="<%=automates[i].configuration%>"> <i class="fas fa-edit fa-2x"></i></a></td>
 
 
           <td>

@@ -68,6 +68,7 @@ automateController.list = function(req, res) {
       var secteur = req.body.secteur;
       var numeroserie = req.body.numeroserie;
       var bassin = req.body.bassin;
+      var configuration = req.body.configuration;
       
 
   Automate.findByIdAndUpdate(id, { 
@@ -78,6 +79,7 @@ automateController.list = function(req, res) {
       secteur:secteur, 
       numeroserie:numeroserie,
       bassin:bassin,
+      configuration:configuration
     }
     }, function (err) {
     if (!err) {

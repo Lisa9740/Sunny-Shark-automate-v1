@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<% include partials/head.ejs %>
+
+<body>
+  <% include partials/header.ejs%>
+  <div class="container-fluid">
+    <a href="#mymodal" data-toggle="modal" date-target="#mymodal" type="button" class="mt-2 btn btn-primary"> Ajouter
+      automate </a>
+
+
+    <h1 class="text-center">Liste des automates</h1>
+    <% if(automates.length>0) { %>
+    <table class="table table-light table-striped table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Marque</th>
+          <th>Modèle</th>
+          <th>Numéro de série</th>
+          <th>Secteur</th>
+          <th>Code Postale</th>
+          <th>Bassin</th>
+          <th>Modifier</th>
+          <th>Supprimer</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <% for(var i=0; i<(automates.length);i++) { %>
+        <tr>
+
+          <td>
+            <%= automates[i].marque%>
+          </td>
+          <td>
+            <%= automates[i].modele%>
+          </td>
+          <td>
+            <%= automates[i].numeroserie%>
+          </td>
+          <td>
+              <%= automates[i].secteur%>
+          </td>
+          <td>
+              <%= automates[i].lieu%>
+          </td>
+          <td>
+            <%= automates[i].bassin%>
+          </td>
+
+          <td><a href="#editModal" data-target="#editModal" data-toggle="modal" data-id="<%=automates[i]._id%>"
+              data-marque="<%=automates[i].marque%>" data-modele="<%=automates[i].modele%>" data-secteur="<%=automates[i].secteur%>"
+              data-bassin="<%=automates[i].bassin%>" data-numeroserie="<%=automates[i].numeroserie%>"><i class="fas fa-edit fa-2x"></i></a></td>
+
+
+          <td>
+            <form action="/delete/<%= automates[i]._id %>" method="POST">
+                <button class="btn btn-success" type="submit"><i class='far fa-trash-alt '></i></button>
+            </form>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <div>No automates found.</div>
+    <% } %>
+  </div>
+
+  <!-- Modal création nouvel automate -->
+  <div class="modal fade" id="mymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header blue-underline bg-dark text-white">
+          <h5 class="modal-title" id="exampleModalLabel"> Ajout d'un nouvel automate</h5>
+          <button type="button" class="close bg-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%include create.ejs%>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Modal mofication automate -->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header blue-underline bg-dark text-white">
+          <h5 class="modal-title" id="exampleModalLabel"> Modification des données</h5>
+          <button type="button" class="close bg-light" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%include edit.ejs%>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+
+
+  <!-- views/partials/header.ejs -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="/javascripts/script.js"></script>
+  <%include partials/footer.ejs%>
+</body>
+
+</html>

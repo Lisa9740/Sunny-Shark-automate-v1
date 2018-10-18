@@ -1,3 +1,4 @@
+//recupère les données dans le modal pour l'édition
 $(function(){
 	$('#editModal').on('show.bs.modal', function (event) {
 		var button = $(event.relatedTarget);

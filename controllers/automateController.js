@@ -2,7 +2,7 @@ var Automate = require("../models/AutomateModel");
 
 var automateController = {};
 
-//Add show list of employees function.
+//Add show list of automates.
 automateController.list = function(req, res) {
     Automate.find({}).exec(function (err, automates) {
       if (err) {
@@ -57,7 +57,7 @@ automateController.list = function(req, res) {
     });
   };
 
-  // //Add update automates function for updating currently edited automates.automateController.update = function(req, res) {
+  // //Add update automates function for updating currently edited 
 
     automateController.update = function(req, res) {
       // recuperation des tous les champs du formulaire à editer

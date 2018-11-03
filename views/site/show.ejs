@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Employee Detail</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="container">
+      <h3><a href="/employees">Employee List</a></h3>
+      <h1>Employee Detail</h1>
+      <table>
+        <tbody>
+          <tr>
+            <td>Marque</td>
+            <td>:</td>
+            <td><%= automates.marque %></td>
+          </tr>
+          <tr>
+            <td>Modele</td>
+            <td>:</td>
+            <td><%= automates.modele %></td>
+          </tr>
+          <tr>
+            <td>Secteur</td>
+            <td>:</td>
+            <td><%= automates.secteur %></td>
+          </tr>
+          <tr>
+            <td>Lieu</td>
+            <td>:</td>
+            <td><%= automates.lieu %></td>
+          </tr>
+          <tr>
+            <td>Numéro de série</td>
+            <td>:</td>
+            <td><%= automates.numeroserie %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h3><a href="/edit/<%= automates._id%>">EDIT</a></h3>
+      <form action="/delete/<%=automates._id%>" method="post">
+        <button type="submit">DELETE</button>
+      </form>
+    </div>
+  </body>
+</html>

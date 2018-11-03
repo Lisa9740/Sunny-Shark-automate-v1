@@ -1,5 +1,5 @@
 
-<form action="/update/" method="post">
+<form action="/automate/update/" method="post">
 <div class="row">
   <div class=" col form-group">
       <label for=""> Marque</label>
@@ -11,28 +11,12 @@
   </div>
 </div>
 
-  <div class="form-group">
-      <label for=""> Secteur</label>
-     <input  class="form-control"  type="text" name="secteur" value="<%=automates.secteur%>" id="secteur" />
-  </div>
-<div class="row">
-  <div class="col form-group">
-      <label for=""> Code Postale</label>
-     <input  class="form-control"  type="number" name="lieu" value="<%=automates.lieu%>" id="lieu" />
-  </div>
 
-  <div class="col form-group">
+  <div class="form-group">
       <label for=""> Numéro de serie</label>
     <input  class="form-control"  type="number" name="numeroserie" value="<%=automates.numeroserie%>" id="numeroserie" />
   </div>
-</div>
 
-  <div class="form-group">
-    
-    <label for=""> Bassin affecté : </label>
-     <input  class="form-control"  type="text" name="bassin" value="<%=automates.bassin%>" id="bassin" />
-
-  </div>
   <div class="form-group">
     
       <label for=""> Configuration (au format json)</label>

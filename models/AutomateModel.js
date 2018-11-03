@@ -3,11 +3,9 @@ var mongoose = require('mongoose');
 var AutomateSchema = new mongoose.Schema({
     marque: String,
     modele: String,
-    secteur: String,
-    lieu: String,
-    bassin: String,
     numeroserie: Number,
-    configuration: JSON
+    configuration: JSON,
+    bassin_affecte: {type: mongoose.Schema.ObjectId, ref:'bassin'}
   });
 
   module.exports = mongoose.model('Automate', AutomateSchema);

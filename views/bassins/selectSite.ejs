@@ -1,0 +1,7 @@
+<label for=""> Selectionner le lieu </label>
+<select class="form-control"  name="site_id" >
+    <% bassins.forEach(function (site) { %>
+        
+        <option value="<%= site._id%>"> <%= site.nom %></option>
+    <% }) %>
+</select>
